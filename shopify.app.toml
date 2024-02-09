@@ -3,10 +3,12 @@
 client_id = "8985b56b6c64a481aedb459b4f3a063f"
 name = "Upsell"
 handle = "upsell-190"
-application_url = "https://example.com/"
+application_url = "https://hundred-outer-cfr-personalized.trycloudflare.com"
 embedded = true
 
 [build]
+automatically_update_urls_on_dev = true
+dev_store_url = "thails-checkout-upsell.myshopify.com"
 include_config_on_deploy = true
 
 [access_scopes]
@@ -14,7 +16,11 @@ include_config_on_deploy = true
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://hundred-outer-cfr-personalized.trycloudflare.com/auth/callback",
+  "https://hundred-outer-cfr-personalized.trycloudflare.com/auth/shopify/callback",
+  "https://hundred-outer-cfr-personalized.trycloudflare.com/api/auth/callback"
+]
 
 [webhooks]
 api_version = "2024-01"
